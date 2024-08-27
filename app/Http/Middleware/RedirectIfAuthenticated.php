@@ -16,7 +16,7 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()) return redirect()->route('inicio');
+        if(Auth::check()) return redirect()->route('user');
        return $next($request);
     }
 }

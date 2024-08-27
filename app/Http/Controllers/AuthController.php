@@ -19,15 +19,10 @@ class AuthController extends Controller
             return redirect()->route('login');
         }
 
-        return redirect()->intended('inicio');
+        return redirect()->intended('user');
     }
 
     public function logOut(Request $request){
-
-        // Auth::logout();
-        // $request->session->invalidate();
-        // $request->session->regenerateToken();
-        // return redirect()->route('login');
 
         // Cerrar la sesión del usuario
         Auth::logout();

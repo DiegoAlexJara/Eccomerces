@@ -30,8 +30,13 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="password">
             </div>
+
+            <button type="submit" class="btn btn-primary">INGRESAR</button>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-3">
+                <a href="">CREAR CUENTA</a>
+            </div>
+
         </form>
     </div>
 </body>

@@ -19,7 +19,7 @@ Route::post('/inicio', [AuthController::class, 'logOut'])
     ->name('logOut');
 
 Route::get('/user', [UserController::class, 'InicioSession'])
-    ->name('inicio')
+    ->name('user')
     ->middleware(AuthMiddleware::class);
 
 Route::get('/admin', [AdminController::class, 'inicio'])

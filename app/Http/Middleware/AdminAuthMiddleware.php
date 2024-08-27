@@ -18,7 +18,7 @@ class AdminAuthMiddleware
     {
         $user = Auth::user();
        if(!Auth::check()) return redirect()->route('login');
-       if(!$user->admin) return redirect()->route('inicio');
+       if(!$user->admin) return redirect()->route('user');
        return $next($request);
     }
 }
