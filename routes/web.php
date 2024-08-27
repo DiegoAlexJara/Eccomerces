@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +18,10 @@ Route::post('/', [AuthController::class, 'login'])
 Route::post('/inicio', [AuthController::class, 'logOut'])
     ->name('logOut');
 
-Route::get('/inicio', [UserController::class, 'InicioSession'])
+Route::get('/user', [UserController::class, 'InicioSession'])
     ->name('inicio')
     ->middleware(AuthMiddleware::class);
+
+Route::get('/admin', [AdminController::class, 'inicio'])
+    ->name('admin')
+    ->middleware(AdminAuthMiddleware::class);
