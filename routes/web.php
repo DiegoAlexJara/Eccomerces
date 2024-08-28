@@ -29,6 +29,9 @@ Route::get('/admin', [AdminController::class, 'inicio'])
     ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/marca', MarcaController::class)
-    ->names('marca');
+    ->names('marca')
+    ->middleware(AdminAuthMiddleware::class);
 
-    Route::resource('admin/categorias', CategoryController::class)->names('category');
+Route::resource('admin/categorias', CategoryController::class)
+    ->names('category')
+    ->middleware(AdminAuthMiddleware::class);

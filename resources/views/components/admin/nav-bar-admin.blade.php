@@ -17,12 +17,12 @@
                         PRODUCTOS
                     </a>
                     <ul class="dropdown-menu">
-                        
+
                         <li><a class="dropdown-item" href="{{ route('marca.index') }}">Marcas</a></li>
-                        <li><a class="dropdown-item" href="#">Categorias</a></li>
+                        <li><a class="dropdown-item" href="{{ route('category.index') }}">Categorias</a></li>
                         <li><a class="dropdown-item" href="#">SubCategorias</a></li>
                         <li><a class="dropdown-item" href="#">Productos</a></li>
-                        
+
 
                     </ul>
                 </li>
