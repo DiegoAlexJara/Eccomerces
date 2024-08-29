@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\SubCategory;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AuthMiddleware;
@@ -34,4 +36,8 @@ Route::resource('admin/marca', MarcaController::class)
 
 Route::resource('admin/categorias', CategoryController::class)
     ->names('category')
+    ->middleware(AdminAuthMiddleware::class);
+
+Route::resource('admin/subcategoria', SubCategoryController::class)
+    ->names('subcategorias')
     ->middleware(AdminAuthMiddleware::class);
