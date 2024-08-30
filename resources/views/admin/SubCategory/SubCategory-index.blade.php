@@ -23,6 +23,7 @@
             </tr>
         </thead>
         <tbody>
+            @php $numero_tabla = 1 @endphp
             @foreach ($subcategory as $registros)
                 <tr>
                     <th>{{ $registros->id }}</th>
@@ -50,10 +51,12 @@
                         </ul>
                     </th>
                 </tr>
+                @php $numero_tabla +=1 @endphp
             @endforeach
         </tbody>
     </table>
     <a href="{{ route('subcategorias.create') }}" class="d-grid gap-2">
         <button class="btn btn-secondary" type="button">CREAR NUEVA SubCategoria</button>
     </a>
+    {{$subcategory->links()}}
 @endsection

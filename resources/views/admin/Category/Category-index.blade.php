@@ -22,9 +22,10 @@
             </tr>
         </thead>
         <tbody>
+            @php $numero_tabla = 1 @endphp
             @foreach ($category as $registro)
                 <tr>
-                    <th>{{ $registro->id }}</th>
+                    <th>{{ $numero_tabla }}</th>
                     <th>{{ $registro->Name }}</th>
                     <th>{{ $registro->description }}</th>
                     <th>{{ $registro->color }}</th>
@@ -47,6 +48,7 @@
 
                         </ul>
                     </th>
+                    @php $numero_tabla +=1 @endphp
                 </tr>
             @endforeach
         </tbody>

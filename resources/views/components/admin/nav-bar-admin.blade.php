@@ -21,7 +21,7 @@
                         <li><a class="dropdown-item" href="{{ route('marca.index') }}">Marcas</a></li>
                         <li><a class="dropdown-item" href="{{ route('category.index') }}">Categorias</a></li>
                         <li><a class="dropdown-item" href="{{route('subcategorias.index')}}">SubCategorias</a></li>
-                        <li><a class="dropdown-item" href="#">Productos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('productos.index') }}">Productos</a></li>
 
 
                     </ul>
