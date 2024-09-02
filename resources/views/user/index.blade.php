@@ -1,7 +1,6 @@
 @extends('components.user.app-layouts-user')
-@section('title')
-INICIO
+{{-- @section('title')
+
 @endsection
 @section('content')
-{{$user->name}}
-@endsection
+@endsection --}}

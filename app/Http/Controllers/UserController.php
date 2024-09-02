@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function InicioSession(){
         $user = Auth::user();
+        // return $user;
         return view('user.index', compact('user'));
-        
     }
 }

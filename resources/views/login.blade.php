@@ -34,7 +34,7 @@
             <button type="submit" class="btn btn-primary">INGRESAR</button>
             
             <div class="mb-3">
-                <a href="">CREAR CUENTA</a>
+                <a href="{{ route('usuarios.create') }}">CREAR CUENTA</a>
             </div>
 
         </form>

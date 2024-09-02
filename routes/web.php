@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\SubCategory;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersControllers;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\RedirectIfAuthenticated;
@@ -47,3 +48,6 @@ Route::resource('admin/subcategoria', SubCategoryController::class)
 Route::resource('admin/productos', ProductosController::class)
     ->names('productos')
     ->middleware(AdminAuthMiddleware::class);
+
+Route::resource('User', UsersControllers::class)
+    ->names('usuarios');
