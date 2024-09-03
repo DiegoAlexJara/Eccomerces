@@ -4,7 +4,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SomeController;
 use App\Http\Controllers\SubCategory;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserController;
@@ -13,6 +16,7 @@ use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Models\Productos;
+use Illuminate\Cache\Events\RetrievingKey;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'ShowLogin'])
@@ -49,5 +53,11 @@ Route::resource('admin/productos', ProductosController::class)
     ->names('productos')
     ->middleware(AdminAuthMiddleware::class);
 
-Route::resource('User', UsersControllers::class)
+Route::resource('admin/user', UsersControllers::class)
     ->names('usuarios');
+
+Route::resource('admin/Role', RoleController::class)
+    ->names('roles');
+
+Route::resource('admin/user/permisos', PermisosController::class)
+    ->names('permisos');
