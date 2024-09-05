@@ -1,6 +1,6 @@
 @extends('components.admin.app-layouts-admin')
 @section('title')
-    USUARIOS
+    ROLES
 @endsection
 @section('content')
     @session('success')
@@ -13,19 +13,18 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">NOMBRE</th>
-                <th scope="col">CORREO</th>
-                <th scope="col">ROL</th>
+                <th scope="col">PERMISOS</th>
+
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $registros)
+            @foreach ($roles as $registros)
                 <tr>
                     <th scope="row">{{ $registros->id }}</th>
                     <th>{{ $registros->name }}</th>
-                    <th>{{ $registros->email }}</th>
                     <th>
-                        @foreach ($registros->roles as $role)
-                            <span class="badge bg-primary">{{ $role->name }}</span>
+                        @foreach ($registros->permissions as $permisos)
+                            <li>{{ $permisos->name }}</li>
                         @endforeach
                     </th>
                     <th>
@@ -35,9 +34,14 @@
                                 ACCIONES
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('DarRol.edit', $registros->id) }}">Modificar Rol</a>
+                                <li><a class="dropdown-item" href="{{ route('roles.edit', $registros->id) }}">Modificar</a></li>
+                                <li>
+                                    <form action="{{ route('roles.destroy', $registros->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    </form>
                                 </li>
-                                
                             </ul>
                         </div>
                     </th>
@@ -45,4 +49,7 @@
             @endforeach
         </tbody>
     </table>
+    <a href="{{ route('roles.create') }}" class="d-grid gap-2">
+        <button class="btn btn-primary" type="button">CREAR ROL</button>
+    </a>
 @endsection

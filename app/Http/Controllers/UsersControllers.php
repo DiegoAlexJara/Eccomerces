@@ -14,11 +14,15 @@ class UsersControllers extends Controller
     public function index()
     {
 
+        $users = User::with('roles')->get();
+        return view('admin.Usuarios.Usuarios-index', compact('users'));
+
+        // return $permisos = Permission::all();
         // $users = User::with(['roles', 'permissions'])->get();
-        $roles = Role::all();
-        $permisos = Permission::all();
-        $users = User::with(['roles', 'permissions'])->get();
-        return view('admin.Usuarios.Usuarios-index', compact('users', 'roles', 'permisos'));
+        // $roles = Role::all();
+        // $permissions = Permission::all();
+        // return $users = User::with(['roles', 'permissions'])->get();
+        // return view('admin.Usuarios.Usuarios-index', compact('users', 'roles', 'permissions'));
         // return  view('admin.Usuarios.Usuarios-index', compact('users'));
     }
     public function create()

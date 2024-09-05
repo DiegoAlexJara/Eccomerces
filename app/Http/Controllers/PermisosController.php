@@ -8,6 +8,15 @@ use Spatie\Permission\Models\Role;
 
 class PermisosController extends Controller
 {
+    public function index()
+    {
+        $permision = Permission::with('roles')->get();
+        return view('admin.Roles-Permisos.Permisos-index', compact('permision'));
+        
+    }
+    public function show(){
+        return 'aqui no va';
+    }
     public function create(){
         $roles = Role::all();
         return view('Roles-Permisos.Permisos-create', compact('roles'));

@@ -7,6 +7,7 @@ use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RolesUserController;
 use App\Http\Controllers\SomeController;
 use App\Http\Controllers\SubCategory;
 use App\Http\Controllers\SubCategoryController;
@@ -59,5 +60,10 @@ Route::resource('admin/user', UsersControllers::class)
 Route::resource('admin/Role', RoleController::class)
     ->names('roles');
 
-Route::resource('admin/user/permisos', PermisosController::class)
+Route::resource('admin/Permisos', PermisosController::class)
     ->names('permisos');
+
+Route::resource('admin/user/rol', RolesUserController::class)
+    ->names('DarRol');
+
+

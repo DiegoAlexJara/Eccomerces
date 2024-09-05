@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345'),
             'admin' => true,
         ]);
+        $this->call(PermisosSedeers::class);
     }
 }

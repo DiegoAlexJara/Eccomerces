@@ -20,8 +20,22 @@
 
                         <li><a class="dropdown-item" href="{{ route('marca.index') }}">Marcas</a></li>
                         <li><a class="dropdown-item" href="{{ route('category.index') }}">Categorias</a></li>
-                        <li><a class="dropdown-item" href="{{route('subcategorias.index')}}">SubCategorias</a></li>
+                        <li><a class="dropdown-item" href="{{ route('subcategorias.index') }}">SubCategorias</a></li>
                         <li><a class="dropdown-item" href="{{ route('productos.index') }}">Productos</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        ROLES
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="{{ route('roles.index') }}">Roles</a></li>
+                        <li><a class="dropdown-item" href="{{ route('permisos.index') }}">Permisos</a></li>
+
 
 
                     </ul>
