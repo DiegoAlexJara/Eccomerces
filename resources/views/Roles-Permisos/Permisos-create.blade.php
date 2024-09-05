@@ -11,8 +11,8 @@ CREACION DE PERMISOS
     </div>
 
     <div class="form-group">
-        <label for="role">Asignar a Rol:</label>
-        <select name="role" id="role" class="form-control" required>
+        <label for="role">Asignar a Roles:</label>
+        <select name="role[]" id="role[]" class="form-control" multiple>
             @foreach($roles as $role)
                 <option value="{{ $role->id }}">{{ $role->name }}</option>
             @endforeach

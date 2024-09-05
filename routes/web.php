@@ -31,39 +31,42 @@ Route::post('/inicio', [AuthController::class, 'logOut'])
     ->name('logOut');
 
 Route::get('/user', [UserController::class, 'InicioSession'])
-    ->name('user')
-    ->middleware(AuthMiddleware::class);
+    ->name('user');
 
 Route::get('/admin', [AdminController::class, 'inicio'])
-    ->name('admin')
-    ->middleware(AdminAuthMiddleware::class);
+    ->name('admin');
+    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/marca', MarcaController::class)
-    ->names('marca')
-    ->middleware(AdminAuthMiddleware::class);
+    ->names('marca');
+    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/categorias', CategoryController::class)
-    ->names('category')
-    ->middleware(AdminAuthMiddleware::class);
+    ->names('category');
+    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/subcategoria', SubCategoryController::class)
-    ->names('subcategorias')
-    ->middleware(AdminAuthMiddleware::class);
+    ->names('subcategorias');
+    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/productos', ProductosController::class)
-    ->names('productos')
-    ->middleware(AdminAuthMiddleware::class);
+    ->names('productos');
+    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/user', UsersControllers::class)
-    ->names('usuarios');
+    ->names('usuarios')
+    ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/Role', RoleController::class)
-    ->names('roles');
+    ->names('roles')
+    ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/Permisos', PermisosController::class)
-    ->names('permisos');
+    ->names('permisos')
+    ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/user/rol', RolesUserController::class)
-    ->names('DarRol');
+    ->names('DarRol')
+    ->middleware(AdminAuthMiddleware::class);
 
 

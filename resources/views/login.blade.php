@@ -28,17 +28,22 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password" >
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    👁️
+                </span>
             </div>
+            
 
             <button type="submit" class="btn btn-primary">INGRESAR</button>
-            
+
             <div class="mb-3">
                 <a href="{{ route('usuarios.create') }}">CREAR CUENTA</a>
             </div>
 
         </form>
     </div>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

@@ -10,14 +10,16 @@ class PermisosController extends Controller
 {
     public function index()
     {
-        $permision = Permission::with('roles')->get();
+        $permision = Permission::with('roles')->paginate(10);
         return view('admin.Roles-Permisos.Permisos-index', compact('permision'));
-        
     }
-    public function show(){
+    public function show()
+    {
+
         return 'aqui no va';
     }
-    public function create(){
+    public function create()
+    {
         $roles = Role::all();
         return view('Roles-Permisos.Permisos-create', compact('roles'));
     }
@@ -29,6 +31,6 @@ class PermisosController extends Controller
         $permision = Permission::create(['name' => $validated['name']]);
         $role = Role::findById($validated['role']);
         $role->givePermissionTo($permision);
-        return redirect()->route('usuarios.index');
+        return redirect()->route('permisos.index')->with('success', 'Permisos Creado');
     }
 }

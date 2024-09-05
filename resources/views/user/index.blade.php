@@ -1,6 +1,11 @@
 @extends('components.user.app-layouts-user')
-{{-- @section('title')
-
+@section('title')
+INICIO
 @endsection
 @section('content')
-@endsection --}}
+@session('error')
+<div class="alert alert-danger" role="alert">
+    {{ session('error') }}
+</div>
+@endsession
+@endsection

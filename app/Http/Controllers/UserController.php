@@ -7,9 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function InicioSession(){
+    public function InicioSession()
+    {
         $user = Auth::user();
-        // return $user;
+        if(!$user) return redirect()->route('ShowLogin');
+        
+        
         return view('user.index', compact('user'));
+
     }
 }

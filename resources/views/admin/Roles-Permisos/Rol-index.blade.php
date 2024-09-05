@@ -52,4 +52,5 @@
     <a href="{{ route('roles.create') }}" class="d-grid gap-2">
         <button class="btn btn-primary" type="button">CREAR ROL</button>
     </a>
+    {{$roles->links()}}
 @endsection

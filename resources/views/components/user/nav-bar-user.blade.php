@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('inicio') }}">INICIO</a>
+        <a class="navbar-brand" href="{{ route('user') }}">INICIO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,24 @@
                         </li>
                     </ul>
                 </li>
-                
+                <li>
+                    <form action="{{ route('logOut') }}" method="POST">
+                        @csrf
+                        <input type="submit" value="SALIR">
+                    </form>
+                </li>
+
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            @php
+
+                if(!$user->hasRole('User')){
+                    echo '<a href="' . route('admin') . '"><button>ADMIN</button></a>';
+                }
+            @endphp      
         </div>
     </div>
 </nav>

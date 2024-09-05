@@ -19,7 +19,17 @@ class PermisosSedeers extends Seeder
             'Eliminar usuarios',
             'Ver usuarios',
             'Asignar roles a usuarios',
-            'Revocar roles de usuarios'
+            'Revocar roles de usuarios',
+            'view products',
+            'view content',
+            'publish content',
+            'view comments',
+            'create comments',
+            'delete comments',
+            'create products',
+            'edit products',
+            'delete products',
+            
         ];
 
         foreach($permisos as $permisos)
