@@ -3,6 +3,11 @@
     USUARIOS
 @endsection
 @section('content')
+    <h2>USUARIOS</h2>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+    </form>
     @session('success')
         <div class="alert alert-primary" role="alert">
             {{ session('success') }}
@@ -35,9 +40,10 @@
                                 ACCIONES
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('DarRol.edit', $registros->id) }}">Modificar Rol</a>
+                                <li><a class="dropdown-item" href="{{ route('DarRol.edit', $registros->id) }}">Modificar
+                                        Rol</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </th>

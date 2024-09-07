@@ -21,6 +21,7 @@
     <div class="form-container">
         <form action="{{ route('usuarios.store') }}" method="POST">
             @csrf
+            <h2>Nueva Cuenta</h2>
             NOMBRE
             <div class="mb-3">
                 <label for="">
@@ -63,6 +64,7 @@
                 </label>
             </div>
         </form>
+        <a href="{{ route('ShowLogin') }}" class="btn btn-primary">REGRESAR</a>
     </div>
 </body>
 

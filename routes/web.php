@@ -15,6 +15,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersControllers;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\ProductsEditMiddlware;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Models\Productos;
 use Illuminate\Cache\Events\RetrievingKey;
@@ -33,29 +34,31 @@ Route::post('/inicio', [AuthController::class, 'logOut'])
 Route::get('/user', [UserController::class, 'InicioSession'])
     ->name('user');
 
+    Route::get('/create', function(){ return view('nuevo-usuario'); })
+        ->name('user-Create')
+        ->middleware(RedirectIfAuthenticated::class);
+
 Route::get('/admin', [AdminController::class, 'inicio'])
     ->name('admin');
-    // ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/marca', MarcaController::class)
-    ->names('marca');
-    // ->middleware(AdminAuthMiddleware::class);
+    ->names('marca')
+    ->middleware(ProductsEditMiddlware::class);
 
 Route::resource('admin/categorias', CategoryController::class)
-    ->names('category');
-    // ->middleware(AdminAuthMiddleware::class);
+    ->names('category')
+    ->middleware(ProductsEditMiddlware::class);
 
 Route::resource('admin/subcategoria', SubCategoryController::class)
-    ->names('subcategorias');
-    // ->middleware(AdminAuthMiddleware::class);
+    ->names('subcategorias')
+    ->middleware(ProductsEditMiddlware::class);
 
 Route::resource('admin/productos', ProductosController::class)
-    ->names('productos');
-    // ->middleware(AdminAuthMiddleware::class);
+    ->names('productos')
+    ->middleware(ProductsEditMiddlware::class);
 
 Route::resource('admin/user', UsersControllers::class)
-    ->names('usuarios')
-    ->middleware(AdminAuthMiddleware::class);
+    ->names('usuarios');
 
 Route::resource('admin/Role', RoleController::class)
     ->names('roles')

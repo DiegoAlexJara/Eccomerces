@@ -13,10 +13,14 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
         $credenciales = $request->only('email', 'password');
         
         if (!Auth::attempt($credenciales)) {    
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error', 'USUARIO O CONTRASEÑA INCORECTOS');
         }
 
         return redirect()->intended('user');
@@ -32,7 +36,7 @@ class AuthController extends Controller
 
         // Regenerar el token de la sesión
         $request->session()->regenerateToken();
-
+        
         // Redirigir al usuario a la página de inicio u otra página
         return redirect()->route('login');
 

@@ -32,6 +32,6 @@ class RolesUserController extends Controller
         {
             $user->syncRoles(Role::find($request->roles));
         }
-        return redirect()->route('usuarios.index')->with('success', 'SE HA DADO UN ROL');
+        return redirect()->route('usuarios.index')->with('success', 'SE HA MODIFICADO EL ROL');
     }
 }

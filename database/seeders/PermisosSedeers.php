@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PermisosSedeers extends Seeder
 {
@@ -29,13 +30,14 @@ class PermisosSedeers extends Seeder
             'create products',
             'edit products',
             'delete products',
-            
+
         ];
 
-        foreach($permisos as $permisos)
-        {
-            Permission::create(['name'=>$permisos]);
+        $role = Role::create(['name' => 'Admin']);
+        $role = Role::findById(1);
+        foreach ($permisos as $permisos) {
+            $permision = Permission::create(['name' => $permisos]);
+            $role->givePermissionTo($permision);
         }
-
     }
 }

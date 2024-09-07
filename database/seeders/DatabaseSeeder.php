@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SubCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,12 +16,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
+        $this->call(PermisosSedeers::class);
+        $this->call(MarcaSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(SubCategorySeeder::class);
+        $user =User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('Admin12345'),
+            
         ]);
-        $this->call(PermisosSedeers::class);
+        $user->syncRoles('Admin');
     }
 }

@@ -37,7 +37,9 @@ class UsersControllers extends Controller
             'email' => 'required|email|unique:users,email|max:255',
             'password' => ['required', 'confirmed', Password::defaults()]
         ]);
-        User::create($request->all());
+        $user = User::create($request->all());
+
+        $user->syncRoles('User');
         return redirect()->route('login');
     }
 }

@@ -41,12 +41,19 @@
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a class="dropdown-item" href="{{ route('marca.edit', $registro->id) }}">Modificar</a></li>
                             <li>
-                                <form action="{{ route('marca.destroy', $registro->id) }}" method="POST">
+                                <a class="d-grid gap-2" href="{{ route('marca.edit', $registro->id) }}">
+                                    <button type="button" class="btn btn-primary">MODIFICAR</button>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('marca.destroy', $registro->id) }}" method="POST" class="d-grid gap-2">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary">ELIMINAR</button>
                                 </form>
                             </li>
                             

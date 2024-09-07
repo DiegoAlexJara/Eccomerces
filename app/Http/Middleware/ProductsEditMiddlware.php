@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class AdminAuthMiddleware
+class ProductsEditMiddlware
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class AdminAuthMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    { 
+    {
         $user = Auth::user();
 
-        if($user && $user->hasPermissionTo('Asignar roles a usuarios'))return $next($request);
+        if($user && $user->hasPermissionTo('edit products'))return $next($request);
         
         return abort(403, 'NO TIENES LOS PERMISOS NECESARIOS');
     }

@@ -21,29 +21,45 @@
     <div class="form-container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
+            <h2>INGRESAR</h2>
+            @session('error')
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+        @endsession
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"></div>
+                <div id="emailHelp" class="form-text">
+                    @error('email')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="password" >
+                <input type="password" name="password" id="password">
                 <span class="toggle-password" onclick="togglePasswordVisibility()">
                     👁️
                 </span>
+                <div id="emailHelp" class="form-text">
+                    @error('password')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
-            
+
 
             <button type="submit" class="btn btn-primary">INGRESAR</button>
 
             <div class="mb-3">
-                <a href="{{ route('usuarios.create') }}">CREAR CUENTA</a>
+                <a href="{{ route('user-Create') }}">CREAR CUENTA</a>
             </div>
 
         </form>
     </div>
-    <script src="js/login.js"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 
 </html>
