@@ -13,7 +13,7 @@ class ProductosController extends Controller
 {
     public function index(){
         
-        $productos = Productos::paginate(10);
+        $productos = Productos::paginate(15);
         $subcategory = SubCategory::all();
         $Category = Category::all();
         $Marca = Marca::all();
@@ -40,7 +40,7 @@ class ProductosController extends Controller
             'subcategory_id' => 'required',
         ]);
         Productos::create($request->all());
-        return redirect()->route('productos.index')->with('success', 'Producto Creado');
+        return redirect()->route('productos.index')->with('success', 'PRODUCTO CREADO');
     }
     public function edit($productos){
         $subcategory = SubCategory::all();
@@ -55,7 +55,7 @@ class ProductosController extends Controller
 
         $productos = Productos::find($productos);
         $productos->update($request->all());
-        return redirect()->route('productos.index')->with('success', 'Producto Modificado');
+        return redirect()->route('productos.index')->with('success', 'PRODUCTO MODIFICADO');
 
     }
 
@@ -65,7 +65,7 @@ class ProductosController extends Controller
         $productos = Productos::find($productos);
 
         $productos->delete();
-        return redirect()->route('productos.index')->with('success', 'Producto Eliminado');
+        return redirect()->route('productos.index')->with('success', 'PRODUCTO ELIMINADO');
         
     }
 

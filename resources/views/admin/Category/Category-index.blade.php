@@ -3,6 +3,7 @@
     CATEGORIAS
 @endsection
 @section('content')
+    <h2>CATEGORIAS</h2>
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">BUSCAR</button>
@@ -22,10 +23,9 @@
             </tr>
         </thead>
         <tbody>
-            @php $numero_tabla = 1 @endphp
             @foreach ($category as $registro)
                 <tr>
-                    <th>{{ $numero_tabla }}</th>
+                    <th>{{ $registro->id }}</th>
                     <th>{{ $registro->Name }}</th>
                     <th>{{ $registro->description }}</th>
                     <th>{{ $registro->color }}</th>
@@ -35,20 +35,25 @@
                             ACCIONES
                         </a>
                         <ul class="dropdown-menu">
-
-                            <li><a class="dropdown-item" href="{{ route('category.edit', $registro->id) }}">Modificar</a></li>
                             <li>
-                                <form action="{{ route('category.destroy', $registro->id) }}" method="POST">
+                                <a class="d-grid gap-2" href="{{ route('category.edit', $registro->id) }}">
+                                    <button type="button" class="btn btn-primary">MODIFICAR</button>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('category.destroy', $registro->id) }}" method="POST"
+                                    class="d-grid gap-2">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary">ELIMINAR</button>
                                 </form>
                             </li>
-
-
                         </ul>
                     </th>
-                    @php $numero_tabla +=1 @endphp
+                    
                 </tr>
             @endforeach
         </tbody>

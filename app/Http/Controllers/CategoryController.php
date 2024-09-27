@@ -29,7 +29,7 @@ class CategoryController extends Controller
 
 
         Category::create($request->all());
-        return redirect()->route('category.index')->with('success', 'Categoria Creada.');
+        return redirect()->route('category.index')->with('success', 'CATEGORIA CREADA.');
     }
 
     public function edit($category)
@@ -48,14 +48,14 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->only(['name', 'description', 'color']));
-        return redirect()->route('category.index')->with('success', 'Categoria Modificada');
+        return redirect()->route('category.index')->with('success', 'CATEGORIA MODIFICADA');
     }
 
     public function destroy($category)
     {
         if (!$category = Category::find($category)) return abort(404);
-        $category = Category::find($category);
+       
         $category->delete();
-        return redirect()->route('category.index')->with('success', 'Categoria Eliminada');
+        return redirect()->route('category.index')->with('success', 'CATEGORIA ELIMINADA');
     }
 }

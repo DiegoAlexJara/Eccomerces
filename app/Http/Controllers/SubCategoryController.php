@@ -33,7 +33,7 @@ class SubCategoryController extends Controller
         ]);
         
         SubCategory::create($request->all());
-        return redirect()->route('subcategorias.index')->with('success', 'SubCategoria Creada.');
+        return redirect()->route('subcategorias.index')->with('success', 'SUBCATEGORIA CREADA.');
     }
 
     public function edit($subcategory)
@@ -56,7 +56,7 @@ class SubCategoryController extends Controller
         ]);
 
         $subcategory->update($request->only(['Name', 'description', 'color', 'category_id']));
-        return redirect()->route('subcategorias.index')->with('success', 'SubCategoria Modificada');
+        return redirect()->route('subcategorias.index')->with('success', 'SUBCATEGORIA MODIFICADA');
 
     }
 
@@ -65,7 +65,7 @@ class SubCategoryController extends Controller
 
         $subcategory = SubCategory::find($subcategory);
         $subcategory->delete();
-        return redirect()->route('subcategorias.index')->with('success', 'SubCategoria Eliminada');
+        return redirect()->route('subcategorias.index')->with('success', 'SUBCATEGORIA ELIMINADA');
         
     }
 

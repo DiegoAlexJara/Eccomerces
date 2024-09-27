@@ -5,86 +5,84 @@
 @section('content')
     <h2>Nuevo Producto</h2>
     <form action="{{ route('productos.store') }}" method="POST">
+
         @csrf
 
-        <label for="">
-            Nombre
-            <input type="text" name="Name" id="Name" value="{{ old('Name') }}">
-        </label>
-        @error('name')
-            <p>{{ $message }}</p>
-        @enderror
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input type="text"class="form-control" name="Name" id="Name" value="{{ old('Name') }}">
+            @error('Name')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <br><br>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-control"
+                oninput="updateCharCount()" maxlength="255">{{ old('description') }}</textarea>
+            <p id="charCount">255 Caracteres Restantes</p>
+            @error('description')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <label for="">
-            Descripcion
-            <input type="text" name="description" id="description" value="{{ old('description') }}">
-        </label>
-        @error('description')
-            <p>{{ $message }}</p>
-        @enderror
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PRECIO</label>
+            <input type="number"class="form-control" name="price" id="price" value="" max='10000'
+                min='1'>
+            @error('price')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <br><br>
-
-        <label for="">
-            Precio
-            <input type="number" name="price" id="price" value="{{ old('price') }}" min="10">
-        </label>
-        @error('price')
-            <p>{{ $message }}</p>
-        @enderror
-
-        <br><br>
-
-        <label for="">
-            <select class="form-select" aria-label="Default select example" name="marca_id" id="marca_id" value="{{old('marca_id')}}">
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="marca_id" id="marca_id"
+                value="{{ old('marca_id') }}">
                 <option selected disabled>Marcas</option>
                 @foreach ($Marca as $registro)
                     <option value="{{ $registro->id }}">{{ $registro->Name }}</option>
                 @endforeach
             </select>
-        </label>
-        @error('category_id')
-            <p>{{ $message }}</p>
-        @enderror        
+            @error('marca_id')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <br><br>
-
-        <label for="">
-            <select class="form-select" aria-label="Default select example" name="category_id" id="category_id" value="{{old('category_id')}}">
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="category_id" id="category_id"
+                value="{{ old('category_id') }}">
                 <option selected disabled>Categorias</option>
                 @foreach ($Category as $registro)
                     <option value="{{ $registro->id }}">{{ $registro->Name }}</option>
                 @endforeach
             </select>
-        </label>
-        @error('category_id')
-            <p>{{ $message }}</p>
-        @enderror
+            @error('category_id')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <br><br>
-        
-        <label for="">
-            <select class="form-select" aria-label="Default select example" name="subcategory_id" id="subcategory_id" value="{{old('subcategory_id')}}">
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="subcategory_id" id="subcategory_id"
+                value="{{ old('subcategory_id') }}">
                 <option selected disabled>SubCategorias</option>
                 @foreach ($subcategory as $registro)
                     <option value="{{ $registro->id }}">{{ $registro->Name }}</option>
                 @endforeach
             </select>
-        </label>
-        @error('category_id')
-            <p>{{ $message }}</p>
-        @enderror
+            @error('subcategory_id')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <br><br>
 
-        <input type="submit" value="CREAR PRODUCTO">
+        <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-primary" type="submit">CREAR PRODUCTO</button>
+        </div>
 
     </form>
 
     <a href="{{ route('productos.index') }}">
         <button type="button" class="btn btn-secondary btn-sm">REGRESAR</button>
     </a>
-
+    <script src="{{ asset('js/index-products.js') }}"></script>
 @endsection

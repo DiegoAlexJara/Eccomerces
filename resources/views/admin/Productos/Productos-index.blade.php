@@ -3,6 +3,7 @@
     PRODUCTOS
 @endsection
 @section('content')
+    <h2>PRODUCTOS</h2>
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">BUSCAR</button>
@@ -25,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @php $numero_tabla = 1 @endphp
+            
             @foreach ($productos as $registro)
                 <tr>
 
@@ -43,21 +44,30 @@
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a class="dropdown-item" href="{{ route('productos.edit', $registro->id) }}">Modificar</a>
+                            <li>
+                                <a class="d-grid gap-2" href="{{ route('productos.edit', $registro->id) }}">
+                                    <button type="button" class="btn btn-primary">MODIFICAR</button>
+                                </a>
                             </li>
                             <li>
-                                <form action="{{ route('productos.destroy', $registro->id) }}" method="POST">
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('productos.destroy', $registro->id) }}" method="POST"
+                                    class="d-grid gap-2">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary">ELIMINAR</button>
                                 </form>
                             </li>
+
+                            
 
                         </ul>
                     </th>
 
                 </tr>
-                @php $numero_tabla +=1 @endphp
+                
             @endforeach
         </tbody>
     </table>

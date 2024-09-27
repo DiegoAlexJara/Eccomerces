@@ -3,6 +3,11 @@
     PERMISOS
 @endsection
 @section('content')
+    <h2>PERMISOS</h2>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+    </form>
     @session('success')
         <div class="alert alert-primary" role="alert">
             {{ session('success') }}
@@ -27,20 +32,32 @@
                         @endforeach
                     </th>
                     <th>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                ACCIONES
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('permisos.edit', $registros->id) }}">Modificar</a></li>
-                                <li>
-                                    <form action="{{ route('permisos.destroy', $registros->id) }}" method="POST">
-                                        <button type="submit" class="btn btn-primary">Eliminar</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            ACCIONES
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="d-grid gap-2" href="{{ route('permisos.edit', $registros->id) }}">
+                                    <button type="button" class="btn btn-primary">MODIFICAR</button>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('permisos.destroy', $registros->id) }}" method="POST"
+                                    class="d-grid gap-2">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-primary">ELIMINAR</button>
+                                </form>
+                            </li>
+
+                            
+
+                        </ul>
                     </th>
                 </tr>
             @endforeach
@@ -49,6 +66,6 @@
     <a href="{{ route('permisos.create') }}" class="d-grid gap-2">
         <button class="btn btn-primary" type="button">CREAR ROL</button>
     </a>
-    {{$permision->links()}}
+    {{ $permision->links() }}
 
 @endsection

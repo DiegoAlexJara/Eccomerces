@@ -3,6 +3,7 @@
     MARCAS
 @endsection
 @section('content')
+<h2>MARCAS</h2>
     
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

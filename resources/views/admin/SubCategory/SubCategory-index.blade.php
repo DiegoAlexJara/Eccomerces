@@ -3,6 +3,7 @@
     SubCategorias
 @endsection
 @section('content')
+    <h2>SUBCATEGORIA</h2>
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">BUSCAR</button>
@@ -37,17 +38,22 @@
                             ACCIONES
                         </a>
                         <ul class="dropdown-menu">
-
-                            <li><a class="dropdown-item" href="{{ route('subcategorias.edit', $registros->id) }}">Modificar</a></li>
                             <li>
-                                <form action="{{ route('subcategorias.destroy', $registros->id) }}" method="POST">
+                                <a class="d-grid gap-2" href="{{ route('subcategorias.edit', $registros->id) }}">
+                                    <button type="button" class="btn btn-primary">MODIFICAR</button>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('subcategorias.destroy', $registros->id) }}" method="POST"
+                                    class="d-grid gap-2">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary">ELIMINAR</button>
                                 </form>
                             </li>
-
-
                         </ul>
                     </th>
                 </tr>
