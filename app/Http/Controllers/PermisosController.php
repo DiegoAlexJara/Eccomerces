@@ -45,19 +45,33 @@ class PermisosController extends Controller
         return view('Roles-Permisos.Permisos-edit', compact('permision', 'roles'));
     }
 
-    public function update(Request $request, $permision)
+    public function update(Request $request, $permission)
     {
-        if (!$permision = Permission::find($permision)) return abort(404);
+        // Encuentra el permiso por su ID, si no lo encuentra, retorna un 404
+        if (!$permission = Permission::find($permission)) {
+            return abort(404);
+        }
+
+        // Valida los datos del formulario
         $validated = $request->validate([
             'name' => 'required|string',
             'role' => 'required|exists:roles,id',
         ]);
-        $permision->update(['name' => $validated['name']]);
-        $role = Role::find($validated['role']);
 
-        if (!$role->hasPermissionTo($permision)) {
-            $role->givePermissionTo($permision);
+        // Actualiza el nombre del permiso 
+        $permission->update(['name' => $validated['name']]);
+
+        // Encuentra el rol que se seleccionó, usando firstOrFail para garantizar un solo registro
+        $role = Role::where('id', $validated['role'])->firstOrFail();
+
+        $permission->syncRoles([]);
+
+        // Verifica si el rol ya tiene el permiso, si no lo tiene, lo asigna
+        if (!$role->hasPermissionTo($permission)) {
+            $role->givePermissionTo($permission);
         }
+
+
         return redirect()->route('permisos.index')->with('success', 'PERMISO MODIFICADA');
     }
 
