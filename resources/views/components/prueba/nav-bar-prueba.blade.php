@@ -6,7 +6,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">TIENDA</a>
+                    <a class="nav-link" href="{{ route('user') }}">TIENDA</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -14,19 +14,19 @@
                         PRODUCTOS
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Marcas</a></li>
+                        <li><a class="dropdown-item" href="{{ route('marcas') }}">Marcas</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Categorias</a></li>
+                        <li><a class="dropdown-item" href="{{ route('Categorys') }}">Categorias</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sub Categorias</a></li>
+                        <li><a class="dropdown-item" href="{{ route('subCategorias') }}">Sub Categorias</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Productos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('productos') }}">Productos</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

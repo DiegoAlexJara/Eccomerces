@@ -8,6 +8,7 @@ use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RolesUserController;
+use App\Http\Controllers\shopController;
 use App\Http\Controllers\SomeController;
 use App\Http\Controllers\SubCategory;
 use App\Http\Controllers\SubCategoryController;
@@ -34,9 +35,11 @@ Route::post('/inicio', [AuthController::class, 'logOut'])
 Route::get('/user', [UserController::class, 'InicioSession'])
     ->name('user');
 
-    Route::get('/create', function(){ return view('nuevo-usuario'); })
-        ->name('user-Create')
-        ->middleware(RedirectIfAuthenticated::class);
+Route::get('/create', function () {
+    return view('nuevo-usuario');
+})
+    ->name('user-Create')
+    ->middleware(RedirectIfAuthenticated::class);
 
 Route::get('/admin', [AdminController::class, 'inicio'])
     ->name('admin');
@@ -72,4 +75,30 @@ Route::resource('admin/user/rol', RolesUserController::class)
     ->names('DarRol')
     ->middleware(AdminAuthMiddleware::class);
 
+Route::get('user/Marcas', [shopController::class, 'marca'])
+    ->name('marcas')
+    ->middleware(AuthMiddleware::class);
 
+Route::get('user/Marca/{marca}', [shopController::class, 'marca_shop'])
+    ->name('marcaShop')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/Categoria', [shopController::class, 'category'])
+    ->name('Categorys')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/Categoria/{categoria}', [shopController::class, 'category_shop'])
+    ->name('categoryShop')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/Sub-Categoria', [shopController::class, 'subcategory'])
+    ->name('subCategorias')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/Sub-Categoria/{categoria}', [shopController::class, 'subcategory_shop'])
+    ->name('subcategoryShop')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/productos', [shopController::class, 'productos'])
+    ->name('productos')
+    ->middleware(AuthMiddleware::class);

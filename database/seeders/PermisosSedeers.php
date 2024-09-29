@@ -39,5 +39,6 @@ class PermisosSedeers extends Seeder
             $permision = Permission::create(['name' => $permisos]);
             $role->givePermissionTo($permision);
         }
+        $role = Role::create(['name' => 'User']);
     }
 }

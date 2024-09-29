@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MarcaSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(SubCategorySeeder::class);
+        $this->call(ProductsTableSeeder::class);
         $user =User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
