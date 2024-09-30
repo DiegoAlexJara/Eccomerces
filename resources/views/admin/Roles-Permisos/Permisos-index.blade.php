@@ -26,10 +26,9 @@
                 <tr>
                     <th scope="row">{{ $registros->id }}</th>
                     <th>{{ $registros->name }}</th>
+                    
                     <th>
-                        @foreach ($registros->roles as $roles)
-                            <li>{{ $roles->name }}</li>
-                        @endforeach
+                        <a href="{{ route('PermisosRoles', $registros->name) }}"><button type="button" class="btn btn-info">ASIGNAR ROLES</button></a>
                     </th>
                     <th>
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

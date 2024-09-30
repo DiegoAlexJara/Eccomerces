@@ -22,10 +22,10 @@
                 <tr>
                     <th scope="row">{{ $registros->id }}</th>
                     <th>{{ $registros->name }}</th>
+                    
                     <th>
-                        @foreach ($registros->permissions as $permisos)
-                            <li>{{ $permisos->name }}</li>
-                        @endforeach
+                        <a href="{{ route('RolesPermisos', $registros->name) }}"><button type="button"
+                                class="btn btn-info">ASIGNAR PERMISOS</button></a>
                     </th>
                     <th>
                         <div class="btn-group" role="group">
@@ -34,7 +34,8 @@
                                 ACCIONES
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('roles.edit', $registros->id) }}">Modificar</a></li>
+                                <li><a class="dropdown-item" href="{{ route('roles.edit', $registros->id) }}">Modificar</a>
+                                </li>
                                 <li>
                                     <form action="{{ route('roles.destroy', $registros->id) }}" method="post">
                                         @csrf
@@ -52,5 +53,5 @@
     <a href="{{ route('roles.create') }}" class="d-grid gap-2">
         <button class="btn btn-primary" type="button">CREAR ROL</button>
     </a>
-    {{$roles->links()}}
+    {{ $roles->links() }}
 @endsection
