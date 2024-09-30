@@ -29,7 +29,7 @@
         @endsession
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="admin@gmail.com">
                 <div id="emailHelp" class="form-text">
                     @error('email')
                         <p>{{ $message }}</p>
@@ -39,7 +39,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
 
             <div class="mb-3">
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" value="Admin12345">
                 <span class="toggle-password" onclick="togglePasswordVisibility()">
                     👁️
                 </span>
