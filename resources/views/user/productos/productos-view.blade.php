@@ -21,8 +21,5 @@
                 </div>
             </div>
         @endforeach
-    </div>
-    <div class="d-grid gap-2">
-        <a href="{{ route('subCategorias') }}"><button class="btn btn-primary" type="button">REGRESAR</button></a>
-    </div>
+    </div>  
 @endsection
