@@ -13,6 +13,11 @@
     </style>
     <h1 class="text-center mb-4">PRODUCTOS</h1>
 
+    <form action="{{ route('subcategoryShop', $subcategory->Name) }}" method="GET" class="mb-3 d-flex align-items-center">
+        <input type="text" class="form-control me-2" id="query" name="query" placeholder="Buscar producto..." />
+        <input type="submit" value="BUSCAR" class="btn btn-primary">
+    </form>
+
     <div class="container">
         @foreach ($products as $item)
             <div class="product-card">
@@ -26,7 +31,11 @@
             </div>
         @endforeach
     </div>
-    <div class="d-grid gap-2">
+    <div class="d-flex justify-content-center">
+        
+        {{ $products->links() }}
+    </div>
+    <div class="d-flex justify-content-center"  style="margin: 5px;">
         <a href="{{ route('subCategorias') }}"><button class="btn btn-primary" type="button">REGRESAR</button></a>
     </div>
 @endsection

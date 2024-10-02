@@ -15,7 +15,7 @@ class shopController extends Controller
         $marcas = Marca::all();
         return view('user.Marca', compact('marcas'));
     }
-    public function marca_shop(String $name)
+    public function marca_shop(String $name, Request $request)
     {
 
         if (!empty($name)) {
@@ -24,11 +24,11 @@ class shopController extends Controller
             // Maneja el caso en que $name esté vacío
             return redirect()->route('marcas');
         }
-    
-        
-        $products = Productos::where('marca_id', $marca->id)->get();
-        // if(!isset($products))return redirect()->route('marcas');
-        // return $products;
+        $query = $request->input('query');
+        $products = Productos::where('name', 'like', "%$query%")
+            ->where('marca_id', $marca->id)
+            ->paginate(20);
+
         return view('user.Marca-view', compact('name', 'products', 'marca'));
     }
     public function category()
@@ -36,7 +36,7 @@ class shopController extends Controller
         $category = Category::all();
         return view('user.Categorys.Category', compact('category'));
     }
-    public function category_shop(string $name)
+    public function category_shop(string $name, Request $request)
     {
         if (!empty($name)) {
             $category = Category::where('name', $name)->first();
@@ -44,7 +44,11 @@ class shopController extends Controller
             // Maneja el caso en que $name esté vacío
             return redirect()->route('Categorys');
         }
-        $products = Productos::where('category_id', $category->id)->get();
+        $query = $request->input('query');
+        $products = Productos::where('name', 'like', "%$query%")
+            ->where('category_id', $category->id)
+            ->paginate(20);
+
         return view('user.Categorys.category-view', compact('name', 'products', 'category'));
     }
     public function subcategory()
@@ -52,7 +56,7 @@ class shopController extends Controller
         $subcategory = SubCategory::all();
         return view('user.subCategorys.subcategory', compact('subcategory'));
     }
-    public function subcategory_shop(string $name)
+    public function subcategory_shop(string $name, Request $request)
     {
         if (!empty($name)) {
             $subcategory = subcategory::where('name', $name)->first();
@@ -60,12 +64,17 @@ class shopController extends Controller
             // Maneja el caso en que $name esté vacío
             return redirect()->route('subCategorias');
         }
-        $products = Productos::where('subcategory_id', $subcategory->id)->get();
+        $query = $request->input('query');
+        $products = Productos::where('subcategory_id', $subcategory->id)
+            ->where('name', 'like', "%$query%")
+            ->paginate(20);
         return view('user.subCategorys.subcategory-view', compact('name', 'products', 'subcategory'));
     }
-    public function productos()
+    public function productos(Request $request)
     {
-        $products = Productos::all();
+        $query = $request->input('query');
+
+        $products = Productos::where('name', 'like', "%$query%")->paginate(20);
         return view('user.productos.productos-view', compact('products'));
     }
 }
