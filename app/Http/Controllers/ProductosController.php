@@ -8,6 +8,7 @@ use App\Models\Productos;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
@@ -63,7 +64,10 @@ class ProductosController extends Controller
     {
 
         $productos = Productos::find($productos);
-
+        $imagen = $productos->path;
+        if ($imagen && Storage::disk('public')->exists($imagen)) {
+            Storage::disk('public')->delete($imagen);
+        }
         $productos->delete();
         return redirect()->route('productos.index')->with('success', 'PRODUCTO ELIMINADO');
         

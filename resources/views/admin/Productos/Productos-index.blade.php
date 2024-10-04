@@ -35,13 +35,11 @@
                     <th scope="col">{{ $registro->Name }}</th>
                     <th scope="col">{{ $registro->description }}</th>
                     <th scope="col">
-                        {{-- @livewire('PermisosRoles', ['NamePermiso' => $name], key($name));    --}}
+                        
                         @livewire('EditImage', ['IdUser' => $registro->id], key($registro->id))
-                        {{-- <img src="{{ asset('storage/' . $registro->path) }}" alt="Image"
-                            style="width: 100px; height: auto;">
-                        <button>MODIFICAR</button> --}}
+                        
                     </th>
-                    <th scope="col">{{ $registro->price }}</th>
+                    <th scope="col">${{ $registro->price }}</th>
                     <th scope="col">{{ $registro->Marca->Name }}</th>
                     <th scope="col">{{ $registro->Category->Name }}</th>
                     <th scope="col">{{ $registro->subcategory->Name }}</th>
