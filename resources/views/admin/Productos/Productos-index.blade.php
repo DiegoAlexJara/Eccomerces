@@ -19,6 +19,7 @@
                 <th scope="col">#</th>
                 <th scope="col">NOMBRE</th>
                 <th scope="col">DESCRIPCION</th>
+                <th scope="col">IMAGEN</th>
                 <th scope="col">PRECIO</th>
                 <th scope="col">MARCA</th>
                 <th scope="col">CATEGORIA</th>
@@ -26,13 +27,20 @@
             </tr>
         </thead>
         <tbody>
-            
+
             @foreach ($productos as $registro)
                 <tr>
 
                     <th scope="col">{{ $registro->id }}</th>
                     <th scope="col">{{ $registro->Name }}</th>
                     <th scope="col">{{ $registro->description }}</th>
+                    <th scope="col">
+                        {{-- @livewire('PermisosRoles', ['NamePermiso' => $name], key($name));    --}}
+                        @livewire('EditImage', ['IdUser' => $registro->id], key($registro->id))
+                        {{-- <img src="{{ asset('storage/' . $registro->path) }}" alt="Image"
+                            style="width: 100px; height: auto;">
+                        <button>MODIFICAR</button> --}}
+                    </th>
                     <th scope="col">{{ $registro->price }}</th>
                     <th scope="col">{{ $registro->Marca->Name }}</th>
                     <th scope="col">{{ $registro->Category->Name }}</th>
@@ -61,18 +69,17 @@
                                 </form>
                             </li>
 
-                            
+
 
                         </ul>
                     </th>
 
                 </tr>
-                
             @endforeach
         </tbody>
     </table>
     <a href="{{ route('productos.create') }}" class="d-grid gap-2">
         <button class="btn btn-secondary" type="button">NUEVO PRODUCTO</button>
     </a>
-    {{$productos->links()}}
+    {{ $productos->links() }}
 @endsection
