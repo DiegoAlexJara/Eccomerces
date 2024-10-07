@@ -3,7 +3,7 @@
     {{ $name }}
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/shop-marca.css') }}">
 @endsection
 @section('content')
     <style>
