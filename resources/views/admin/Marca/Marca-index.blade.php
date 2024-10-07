@@ -21,6 +21,7 @@
                 <th scope="col">NOMBRE</th>
                 <th scope="col">DESCRIPCION</th>
                 <th scope="col">COLOR</th>
+                <th scope="col">IMAGENES</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,11 @@
                     <th>{{ $registro->Name }}</th>
                     <th>{{ $registro->description }}</th>
                     <th>{{ $registro->color }}</th>
+                    <th>
+                        
+                        @livewire('EditImage', ['IdUser' => $registro->id, 'model' => \App\Models\Marca::class], key($registro->id))
+                        
+                    </th>
                     <th>
 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

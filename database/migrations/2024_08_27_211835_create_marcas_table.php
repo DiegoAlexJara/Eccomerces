@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('Name');
             $table->longText('description');
             $table->string('color');
+            $table->string('path')->nullable();
             
             $table->timestamps();
         });

@@ -24,6 +24,12 @@
             <div class="product-card">
 
                 <div class="product-details">
+                    @if ($item->path)
+                        <img src="{{ asset('storage/' . $item->path) }}" alt="Image" style="width: 120px; height: auto;">
+                    @else
+                        <img src="{{ asset('storage/default_image.jpg') }}" alt="Image"
+                            style="width: 100px; height: auto;">
+                    @endif
                     <h2 class="product-title">{{ $item->Name }}</h2>
                     <p class="product-price">${{ $item->price }}</p>
                     <p class="product-description">{{ $item->description }}</p>

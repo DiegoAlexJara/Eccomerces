@@ -18,15 +18,19 @@ class EditImage extends Component
     public $showSquare = false;
     public $image;
     public $IdUser;
+    public $model;
+
 
     public function toggleSquare()
     {
         $this->showSquare = !$this->showSquare;
     }
-    public function mount($IdUser)
+
+    public function mount()
     {
+        $Model = 'Productos';
         // $this->IdImage = $IdImage;
-        $this->IdUser = Productos::find($IdUser);
+        $this->IdUser = $this->model::find($this->IdUser);
         $this->oldImage = $this->IdUser->path;
         // $this->IdUser = $IdUser;
     }

@@ -36,7 +36,7 @@
                     <th scope="col">{{ $registro->description }}</th>
                     <th scope="col">
                         
-                        @livewire('EditImage', ['IdUser' => $registro->id], key($registro->id))
+                        @livewire('EditImage', ['IdUser' => $registro->id, 'model' => \App\Models\Productos::class], key($registro->id))
                         
                     </th>
                     <th scope="col">${{ $registro->price }}</th>
