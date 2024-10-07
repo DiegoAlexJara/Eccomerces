@@ -5,7 +5,7 @@
 @section('content')
     <h2>CATEGORIAS</h2>
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" id="query" name="query" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">BUSCAR</button>
     </form>
     @session('success')

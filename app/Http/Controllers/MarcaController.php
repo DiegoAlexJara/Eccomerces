@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $marcas = Marca::paginate(15);
+        $query = $request->input('query');
+        $marcas = Marca::where('name', 'like', "%$query%")
+            ->paginate(20);
         return view('admin.Marca.Marca-index', compact('marcas'));
     }
     public function create()

@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {   
+        $query = $request->input('query');
+        $subcategory = SubCategory::where('name', 'like', "%$query%")
+            ->paginate(20);
         $category = Category::all();
-        $subcategory = SubCategory::paginate(15);
         return view('admin.SubCategory.SubCategory-index', compact('subcategory'));
     }
 

@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
-    public function index(){
-        
-        $productos = Productos::paginate(15);
+    public function index(Request $request){
+        $query = $request->input('query');
+        $productos = Productos::where('name', 'like', "%$query%")
+            ->paginate(20);
         $subcategory = SubCategory::all();
         $Category = Category::all();
         $Marca = Marca::all();
