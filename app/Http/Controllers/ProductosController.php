@@ -39,6 +39,7 @@ class ProductosController extends Controller
             'marca_id' => 'required',
             'category_id' => 'required',
             'subcategory_id' => 'required',
+            'stock' => 'required',
         ]);
         Productos::create($request->all());
         return redirect()->route('productos.index')->with('success', 'PRODUCTO CREADO');

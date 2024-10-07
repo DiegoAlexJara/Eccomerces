@@ -17,6 +17,7 @@ class Productos extends Model
         'Name',
         'description',
         'price',
+        'stock',
         'category_id',
         'marca_id',
         'subcategory_id',

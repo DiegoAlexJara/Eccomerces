@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description');
             $table->float('price', 8, 2);
             $table->string('path')->nullable();
+            $table->integer('stock'); 
             $table->unsignedBigInteger('category_id'); 
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('marca_id');  

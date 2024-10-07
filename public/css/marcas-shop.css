@@ -1,14 +1,23 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #f4f4f9, #eaeaea); /* Gradiente suave */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 20px; /* Espacio interno */
+    color: #333; /* Color de texto por defecto */
+
+}
 .container-marca {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* 3 columnas iguales */
     gap: 10px;
     /* Espacio entre los cuadros */
-    width: 100%;
+    width: 99%;
     /* Contenedor ocupa el 100% del ancho */
-    margin: 10px;
-}
 
+}
 .box {
     background-color: #f0f0f0;
     border: 1px solid #333;

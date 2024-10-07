@@ -23,14 +23,12 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item" href="{{ route('subCategorias') }}">Sub Categorias</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('productos') }}">Productos</a></li>
+                        
+                       
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACTOS</a>
+                    <a class="nav-link" href="{{ route('contactos') }}">CONTACTOS</a>
                 </li>
             </ul>
             

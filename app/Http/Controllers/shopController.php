@@ -77,4 +77,7 @@ class shopController extends Controller
         $products = Productos::where('name', 'like', "%$query%")->paginate(20);
         return view('user.productos.productos-view', compact('products'));
     }
+    public function contactos(){
+        return view('user.contactos');      
+    }
 }

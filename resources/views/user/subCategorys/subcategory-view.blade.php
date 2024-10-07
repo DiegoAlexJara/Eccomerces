@@ -32,6 +32,7 @@
                     <h2 class="product-title">{{ $item->Name }}</h2>
                     <p class="product-price">${{ $item->price }}</p>
                     <p class="product-description">{{ $item->description }}</p>
+                    <p>Unidades disponibles: {{ $item->stock }}</p>
                     <button class="add-to-cart">Añadir al carrito</button>
                 </div>
             </div>

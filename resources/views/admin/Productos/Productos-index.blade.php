@@ -21,6 +21,7 @@
                 <th scope="col">DESCRIPCION</th>
                 <th scope="col">IMAGEN</th>
                 <th scope="col">PRECIO</th>
+                <th scope="col">UNIDADES</th>
                 <th scope="col">MARCA</th>
                 <th scope="col">CATEGORIA</th>
                 <th scope="col">SUBCATEGORIA</th>
@@ -40,6 +41,9 @@
                         
                     </th>
                     <th scope="col">${{ $registro->price }}</th>
+                    <th scope="col">
+                        @livewire('UnidadesDeProductos', ['productId' => $registro->id], key($registro->id))
+                    </th>
                     <th scope="col">{{ $registro->Marca->Name }}</th>
                     <th scope="col">{{ $registro->Category->Name }}</th>
                     <th scope="col">{{ $registro->subcategory->Name }}</th>

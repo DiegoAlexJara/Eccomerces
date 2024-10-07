@@ -66,7 +66,7 @@ Route::resource('admin/productos', ProductosController::class)
 
 Route::resource('admin/user', UsersControllers::class)
     ->names('usuarios');
-    // ->middleware(AdminAuthMiddleware::class);
+// ->middleware(AdminAuthMiddleware::class);
 
 Route::resource('admin/Role', RoleController::class)
     ->names('roles')
@@ -93,7 +93,7 @@ Route::resource('admin/user/rol', RolesUserController::class)
 
 //INICIO DE ROUTES DE USER
 
-Route::get('/user', [UserController::class, 'InicioSession'])
+Route::get('/user', [shopController::class, 'productos'])
     ->name('user')
     ->middleware(AuthMiddleware::class);
 
@@ -123,6 +123,10 @@ Route::get('user/Sub-Categoria/{categoria}', [shopController::class, 'subcategor
 
 Route::get('user/productos', [shopController::class, 'productos'])
     ->name('productos')
+    ->middleware(AuthMiddleware::class);
+
+Route::get('user/contactos', [shopController::class, 'contactos'])
+    ->name('contactos')
     ->middleware(AuthMiddleware::class);
 
 

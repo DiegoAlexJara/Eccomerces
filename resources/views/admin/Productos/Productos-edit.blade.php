@@ -33,6 +33,14 @@
                 <p>{{ $message }}</p>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="" class="form-label">UNIDADES</label>
+            <input type="number"class="form-control" name="stock" id="stock" value="{{ $productos->stock }}" max='10000000'
+                min='1'>
+            @error('stock')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="marca_id" id="marca_id"

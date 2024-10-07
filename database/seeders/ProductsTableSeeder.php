@@ -23,6 +23,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1, // Reemplaza con el ID real de la subcategoría correspondiente
                 'marca_id' => 1, // ID de MARVEL COMICS
                 'path' => 'images/Spider-Man Into the Spider-Verse.jpg', // Ruta de la imagen
+                'stock' => 10,
             ],
             [
                 'Name' => 'Batman: Year One',
@@ -32,6 +33,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1,
                 'marca_id' => 2, 
                 'path' => 'images/Batman Year One.jpg', // Ruta de la imagen
+                'stock' => 10,
             ],
             [
                 'Name' => 'Saga, Vol. 1',
@@ -41,6 +43,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 2,
                 'marca_id' => 3, 
                 'path' => 'images/Saga, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Hellboy: Seed of Destruction',
@@ -50,6 +53,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 4,
                 'marca_id' => 3, 
                 'path' => 'images/Hellboy Seed of Destruction.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'My Hero Academia, Vol. 1',
@@ -59,6 +63,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 5,
                 'marca_id' => 5,
                 'path' => 'images/My Hero Academia, Vol. 1.jpg', 
+                'stock' => 10,
             ],
             [
                 'Name' => 'Attack on Titan, Vol. 1',
@@ -68,6 +73,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 7,
                 'marca_id' => 6,
                 'path' => 'images/Attack on Titan, Vol. 1.jpg', 
+                'stock' => 10,
             ],
             [
                 'Name' => 'One Piece, Vol. 1',
@@ -77,6 +83,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 5,
                 'marca_id' => 7, 
                 'path' => 'images/One Piece, Vol. 1.jpg', 
+                'stock' => 10,
             ],
             [
                 'Name' => 'Dragon Ball Z, Vol. 1',
@@ -85,7 +92,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 5,
                 'marca_id' => 10, 
-                'path' => 'images/Dragon Ball Z, Vol. 1.jpg', 
+                'path' => 'images/Dragon Ball Z, Vol. 1.jpg',
+                'stock' => 10, 
             ],
             [
                 'Name' => 'The Wicked + The Divine, Vol. 1',
@@ -94,7 +102,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 4,
                 'subcategory_id' => 4,
                 'marca_id' => 3,
-                'path' => 'images/The Wicked + The Divine, Vol. 1.jpg',  
+                'path' => 'images/The Wicked + The Divine, Vol. 1.jpg',
+                'stock' => 10,  
             ],
             [
                 'Name' => 'X-Men: Days of Future Past',
@@ -104,6 +113,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1,
                 'marca_id' => 1, 
                 'path' => 'images/X-Men Days of Future Past.jpg',  
+                'stock' => 10,
             ],
             [
                 'Name' => 'Wonder Woman: The Hiketeia',
@@ -112,7 +122,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 1,
                 'subcategory_id' => 1,
                 'marca_id' => 2, 
-                'path' => 'images/Wonder Woman The Hiketeia.jpg',  
+                'path' => 'images/Wonder Woman The Hiketeia.jpg', 
+                'stock' => 10, 
             ],
             [
                 'Name' => 'The Walking Dead, Vol. 1',
@@ -122,6 +133,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 3,
                 'marca_id' => 3, 
                 'path' => 'images/The Walking Dead, Vol. 1.jpg',  
+                'stock' => 10,
             ],
             [
                 'Name' => 'Buffy the Vampire Slayer: Omnibus, Vol. 1',
@@ -131,6 +143,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 4,
                 'marca_id' => 4, 
                 'path' => 'images/Buffy the Vampire Slayer Omnibus, Vol. 1.jpg',  
+                'stock' => 10,
             ],
             [
                 'Name' => 'Fruits Basket, Vol. 1',
@@ -140,6 +153,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 6,
                 'marca_id' => 5, 
                 'path' => 'images/Fruits Basket, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Life in Another World, Vol. 1',
@@ -149,6 +163,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 10,
                 'marca_id' => 6, 
                 'path' => 'images/Life in Another World, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Naruto, Vol. 1',
@@ -158,6 +173,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 5,
                 'marca_id' => 7, 
                 'path' => 'images/Naruto, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Nana, Vol. 1',
@@ -167,6 +183,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 8,
                 'marca_id' => 9, 
                 'path' => 'images/Nana, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Descender, Vol. 1',
@@ -176,6 +193,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 14,
                 'marca_id' => 3, 
                 'path' => 'images/Descender, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Iron Man: Extremis',
@@ -185,6 +203,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1,
                 'marca_id' => 1, 
                 'path' => 'images/Iron Man Extremis.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Flashpoint',
@@ -194,6 +213,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1,
                 'marca_id' => 2, 
                 'path' => 'images/Flashpoint.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Hellboy: The Bones of Giants',
@@ -203,6 +223,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 3,
                 'marca_id' => 4, 
                 'path' => 'images/Hellboy The Bones of Giants.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Demon Slayer: Kimetsu no Yaiba, Vol. 1',
@@ -212,6 +233,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 5,
                 'marca_id' => 5,
                 'path' => 'images/Demon Slayer Kimetsu no Yaiba, Vol. 1.jpg', 
+                'stock' => 10,
             ],
             [
                 'Name' => 'Guardians of the Galaxy, Vol. 1',
@@ -221,6 +243,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 2,
                 'marca_id' => 1, 
                 'path' => 'images/Guardians of the Galaxy, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Green Lantern: Rebirth',
@@ -230,6 +253,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 1,
                 'marca_id' => 2, 
                 'path' => 'images/Green Lantern Rebirth.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Monstress, Vol. 1',
@@ -239,6 +263,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 14,
                 'marca_id' => 3, 
                 'path' => 'images/Monstress, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Death Note, Vol. 1',
@@ -248,6 +273,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 7,
                 'marca_id' => 5, 
                 'path' => 'images/Death Note, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Ouran High School Host Club, Vol. 1',
@@ -257,6 +283,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 6,
                 'marca_id' => 6, 
                 'path' => 'images/Ouran High School Host Club, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'No Game No Life, Vol. 1',
@@ -266,6 +293,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 10,
                 'marca_id' => 7, 
                 'path' => 'images/No Game No Life, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'My Lesbian Experience with Loneliness',
@@ -275,6 +303,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 11,
                 'marca_id' => 9, 
                 'path' => 'images/My Lesbian Experience with Loneliness.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Nana to Kaoru, Vol. 1',
@@ -284,6 +313,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 8,
                 'marca_id' => 10, 
                 'path' => 'images/Nana to Kaoru, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'The Umbrella Academy, Vol. 1',
@@ -293,6 +323,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 4,
                 'marca_id' => 4, 
                 'path' => 'images/The Umbrella Academy, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Fantastic Four: The Complete Collection, Vol. 1',
@@ -302,6 +333,7 @@ class ProductsTableSeeder extends Seeder
                 'subcategory_id' => 2,
                 'marca_id' => 1, 
                 'path' => 'images/Fantastic Four The Complete Collection, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Sandman: Preludes & Nocturnes',
@@ -310,7 +342,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 1,
                 'subcategory_id' => 2,
                 'marca_id' => 2, 
-                'path' => 'images/Sandman Preludes & Nocturnes.jpg'
+                'path' => 'images/Sandman Preludes & Nocturnes.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Descender, Vol. 2',
@@ -319,7 +352,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 4,
                 'subcategory_id' => 4,
                 'marca_id' => 3, 
-                'path' => 'images/Descender, Vol. 2.jpg'
+                'path' => 'images/Descender, Vol. 2.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Tokyo Ghoul, Vol. 1',
@@ -328,7 +362,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 7,
                 'marca_id' => 5, 
-                'path' => 'images/Tokyo Ghoul, Vol. 1.jpg'
+                'path' => 'images/Tokyo Ghoul, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Fairy Tail, Vol. 1',
@@ -337,7 +372,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 5,
                 'marca_id' => 6, 
-                'path' => 'images/Fairy Tail, Vol. 1.jpg'
+                'path' => 'images/Fairy Tail, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => "Konosuba: God's Blessing on This Wonderful World!, Vol. 1",
@@ -346,7 +382,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 5,
                 'marca_id' => 7, 
-                'path' => "images/Konosuba God's Blessing on This Wonderful World!, Vol. 1.jpg"
+                'path' => "images/Konosuba God's Blessing on This Wonderful World!, Vol. 1.jpg",
+                'stock' => 10,
             ],
             [
                 'Name' => 'Your Lie in April, Vol. 1',
@@ -355,7 +392,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 15,
                 'marca_id' => 9, 
-                'path' => 'images/Your Lie in April, Vol. 1.jpg'
+                'path' => 'images/Your Lie in April, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Skip Beat!, Vol. 1',
@@ -364,7 +402,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 6,
                 'marca_id' => 10, 
-                'path' => 'images/Skip Beat!, Vol. 1.jpg'
+                'path' => 'images/Skip Beat!, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Thor: God of Thunder, Vol. 1',
@@ -373,7 +412,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 1,
                 'subcategory_id' => 1,
                 'marca_id' => 1, 
-                'path' => 'images/Thor God of Thunder, Vol. 1.jpg'
+                'path' => 'images/Thor God of Thunder, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Superman: Red Son',
@@ -382,7 +422,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 1,
                 'subcategory_id' => 1,
                 'marca_id' => 2, 
-                'path' => 'images/Superman Red Son.jpg'
+                'path' => 'images/Superman Red Son.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'The Fade Out, Vol. 1',
@@ -391,7 +432,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 4,
                 'subcategory_id' => 14,
                 'marca_id' => 3, 
-                'path' => 'images/The Fade Out, Vol. 1.jpg'
+                'path' => 'images/The Fade Out, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'The Goon, Vol. 1',
@@ -400,7 +442,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 4,
                 'subcategory_id' => 4,
                 'marca_id' => 4, 
-                'path' => 'images/The Goon, Vol. 1.jpg'
+                'path' => 'images/The Goon, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Boys Over Flowers, Vol. 1',
@@ -409,7 +452,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 6,
                 'marca_id' => 5, 
-                'path' => 'images/Boys Over Flowers, Vol. 1.jpg'
+                'path' => 'images/Boys Over Flowers, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'The Attack on Titan: Before the Fall, Vol. 1',
@@ -418,7 +462,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 7,
                 'marca_id' => 6, 
-                'path' => 'images/The Attack on Titan Before the Fall, Vol. 1.jpg'
+                'path' => 'images/The Attack on Titan Before the Fall, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'That Time I Got Reincarnated as a Slime, Vol. 1',
@@ -427,7 +472,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 10,
                 'marca_id' => 7, 
-                'path' => 'images/That Time I Got Reincarnated as a Slime, Vol. 1.jpg'
+                'path' => 'images/That Time I Got Reincarnated as a Slime, Vol. 1.jpg',
+                'stock' => 10,
             ],
             [
                 'Name' => 'Fun Home: A Family Tragicomic',
@@ -436,7 +482,8 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 2,
                 'subcategory_id' => 11,
                 'marca_id' => 9, 
-                'path' => 'images/Fun Home A Family Tragicomic.jpg'
+                'path' => 'images/Fun Home A Family Tragicomic.jpg',
+                'stock' => 10,
             ],
 
 
