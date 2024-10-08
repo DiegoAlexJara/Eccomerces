@@ -26,8 +26,8 @@
                         <h2 class="product-title">{{ $item->Name }}</h2>
                         <p class="product-price">${{ $item->price }}</p>
                         <p class="product-description">{{ $item->description }}</p>
-                        <p>Unidades disponibles: {{ $item->stock }}</p>
-                        @livewire('AñadirCarrito')
+                        @livewire('AñadirCarrito', ['producId' => $item->id], key($item->id))
+                        {{-- @livewire('UnidadesDeProductos', ['productId' => $registro->id], key($registro->id)) --}}
                     </div>
                 </div>
         @endforeach

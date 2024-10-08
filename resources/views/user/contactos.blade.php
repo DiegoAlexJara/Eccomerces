@@ -14,7 +14,7 @@
         <h3>Información de Contacto</h3>
         <p><strong>Teléfono:</strong> +123 456 7890</p>
         <p><strong>Correo Electrónico:</strong> info@tiendadecomics.com</p>
-        <p><strong>Dirección:</strong> Calle Ejemplo 123, Ciudad, País</p>
+        <p><strong>Dirección:</strong> Calle Siempre Viva 123A, VIVA, MEXICO</p>
         <p><strong>Horario de Atención:</strong> Lunes a Viernes de 10:00 a 18:00</p>
 
         <h3>COMENTARIO</h3>

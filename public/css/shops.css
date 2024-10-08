@@ -42,7 +42,6 @@ body {
 
 /* Product image */
 .product-card img {
-    box-shadow: 0 0 10px 5px;
     width: 100%;
     height: auto;
     border-bottom: 1px solid #eaeaea;

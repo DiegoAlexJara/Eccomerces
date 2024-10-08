@@ -45,7 +45,7 @@ Route::get('/create', function () {
 
 // INICIO DE ROUTES DE ADMINS
 
-Route::get('/admin', [AdminController::class, 'inicio'])
+Route::get('/admin', [AdminController::class, 'inicio'])->middleware('permission:admin')
     ->name('admin');
 
 Route::resource('admin/marca', MarcaController::class)
