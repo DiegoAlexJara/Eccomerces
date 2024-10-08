@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\PermisosController;
@@ -45,7 +46,7 @@ Route::get('/create', function () {
 
 // INICIO DE ROUTES DE ADMINS
 
-Route::get('/admin', [AdminController::class, 'inicio'])->middleware('permission:admin')
+Route::get('/admin', [AdminController::class, 'inicio'])
     ->name('admin');
 
 Route::resource('admin/marca', MarcaController::class)
@@ -129,5 +130,7 @@ Route::get('user/contactos', [shopController::class, 'contactos'])
     ->name('contactos')
     ->middleware(AuthMiddleware::class);
 
-
+Route::get('user/carrito', [CartController::class,'carrito'])
+    ->name('carrito')
+    ->middleware(AuthMiddleware::class);
 //FIN DE USER

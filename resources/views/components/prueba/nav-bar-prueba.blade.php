@@ -38,7 +38,7 @@
                     <a href="{{ route('admin') }}" class="admin-btn">Panel Admin</a>
                 @endif
 
-                <a href="" class="d-flex cart-icon">
+                <a href="{{ route('carrito') }}" class="d-flex cart-icon">
                     🛒 Carrito <span id="cart-count"></span>
                 </a>
                 <div class="nav-item dropdown profile-btn">

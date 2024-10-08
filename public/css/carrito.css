@@ -1,0 +1,22 @@
+.list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+}
+
+.list-group-item h5 {
+    margin: 0;
+}
+
+.btn-success {
+    margin-top: 10px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #f4f4f9, #eaeaea); /* Gradiente suave */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 20px; /* Espacio interno */
+    color: #333; /* Color de texto por defecto */
+
+}

@@ -13,7 +13,7 @@
     </style>
     <h1 class="text-center mb-4">PRODUCTOS</h1>
 
-    
+
     <form action="{{ route('categoryShop', $category->Name) }}" method="GET" class="mb-3 d-flex align-items-center">
         <input type="text" class="form-control me-2" id="query" name="query" placeholder="Buscar producto..." />
         <input type="submit" value="BUSCAR" class="btn btn-primary">
@@ -32,15 +32,14 @@
                     @endif
                     <h2 class="product-title">{{ $item->Name }}</h2>
                     <p class="product-price">${{ $item->price }}</p>
-                    <p>Unidades disponibles: {{ $item->stock }}</p>
                     <p class="product-description">{{ $item->description }}</p>
-                    <button class="add-to-cart">Añadir al carrito</button>
+                    @livewire('AñadirCarrito', ['producId' => $item->id], key($item->id))
                 </div>
             </div>
         @endforeach
     </div>
     <div class="d-flex justify-content-center">
-        
+
         {{ $products->links() }}
     </div>
     <div class="d-flex justify-content-center" style="margin: 5px;">
