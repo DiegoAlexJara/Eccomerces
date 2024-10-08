@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="{{ asset('css/marcas-shop.css') }}">
 @endsection
 @section('content')
+
     <div class="container-marca">
         @foreach ($marcas as $item)
             <a href="{{ route('marcaShop', $item->Name) }}">
-                    <div class="box hover-container" style="background-color: {{ $item->color }} ">
-                        <h3>{{ $item->Name }}</h3>
-
-
-                        <span class="hover-text">{{ $item->description }}</span>
-
+                <div class="box hover-container" style="background-color: {{ $item->color }} ">
+                    <div class="background-image"
+                        style="background-image: url('{{ asset('storage/' . $item->path) }}');background-size: cover; height:350px; background-position: center;">
+                        <span class="hover-text">
+                            <p>{{ $item->Name }}</p>{{ $item->description }}
+                        </span>
                     </div>
-                </a>
+                </div>
+            </a>
         @endforeach
     </div>
 @endsection
