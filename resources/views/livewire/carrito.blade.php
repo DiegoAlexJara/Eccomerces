@@ -17,13 +17,19 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5 class="mb-1">{{ $item->product->Name }}</h5>
-                                    
+
                                     @php
                                         $precio[$item->id] = $item->product->price * $item->quantity;
                                         $total += $precio[$item->id];
                                     @endphp
-                                    <small>Cantidad: {{ $item->quantity }} unidades | Precio: {{$precio[$item->id]}}</small>
- 
+                                    <small>Unidades : {{ $item->quantity }} | Precio por unidad:
+                                        {{ $item->product->price }}
+                                        <p>
+                                            Precio de unidades :
+                                            {{ $precio[$item->id] }}
+                                        </p>
+                                    </small>
+
                                     <p>
                                         Disminuir
                                         <button class="btn btn-danger"
@@ -39,7 +45,7 @@
                         @endforeach
                     </ul>
                     <div class="text-center mt-3">
-                        <p>PRECIO TOTAL : {{$total}}</p>
+                        <p>PRECIO TOTAL : {{ $total }}</p>
                         <a href="" class="btn btn-success">Proceder a Pagar</a>
                         <p style="margin: 10px"><a href="{{ route('user') }}" class="btn btn-primary">REGRESAR</a></p>
                     </div>
