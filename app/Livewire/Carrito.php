@@ -11,6 +11,7 @@ use Livewire\Component;
 class Carrito extends Component
 {
     public $products;
+    public $total;
     public function render()
     {
         $cart = Cart::where('user_id', auth()->id())->with('items.product')->first();
