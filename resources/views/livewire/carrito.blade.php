@@ -27,7 +27,7 @@
                                         <p>
                                             Precio de unidades :
                                             {{ $precio[$item->id] }}
-                                        </p>
+                                        </p>    
                                     </small>
 
                                     <p>
