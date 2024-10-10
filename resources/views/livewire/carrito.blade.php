@@ -23,10 +23,10 @@
                                         $total += $precio[$item->id];
                                     @endphp
                                     <small>Unidades : {{ $item->quantity }} | Precio por unidad:
-                                        {{ $item->product->price }}
+                                        ${{ $item->product->price }}
                                         <p>
                                             Precio de unidades :
-                                            {{ $precio[$item->id] }}
+                                            ${{ $precio[$item->id] }}
                                         </p>    
                                     </small>
 
@@ -45,7 +45,7 @@
                         @endforeach
                     </ul>
                     <div class="text-center mt-3">
-                        <p>PRECIO TOTAL : {{ $total }}</p>
+                        <p>PRECIO TOTAL : ${{ $total }}</p>
                         <a href="" class="btn btn-success">Proceder a Pagar</a>
                         <p style="margin: 10px"><a href="{{ route('user') }}" class="btn btn-primary">REGRESAR</a></p>
                     </div>
