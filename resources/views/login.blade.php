@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LOGIN</title>
+    <link rel="icon" href="{{ asset('img/Eccomerce.webp') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
     {{-- Boostrap --}}
@@ -23,20 +24,23 @@
             @csrf
             <h2>INGRESAR</h2>
             @session('error')
-            <div class="alert alert-danger" role="alert">
-                {{ session('error') }}
-            </div>
-        @endsession
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endsession
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="admin@gmail.com">
+                <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                <p>
+                    <input type="email" class="email" name="email" id="email" aria-describedby="emailHelp"
+                        value="admin@gmail.com">
+                </p>
                 <div id="emailHelp" class="form-text">
                     @error('email')
                         <p>{{ $message }}</p>
                     @enderror
                 </div>
             </div>
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
 
             <div class="mb-3">
                 <input type="password" name="password" id="password" value="Admin12345">
@@ -51,10 +55,10 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">INGRESAR</button>
+            <button type="submit" class="button">INGRESAR</button>
 
             <div class="mb-3">
-                <a href="{{ route('user-Create') }}">CREAR CUENTA</a>
+                <a href="{{ route('user-Create') }}" class="link">CREAR CUENTA</a>
             </div>
 
         </form>
