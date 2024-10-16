@@ -43,7 +43,7 @@
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
 
             <div class="mb-3">
-                <input type="password" name="password" id="password" value="Admin12345">
+                <input class="password" type="password" name="password" id="password" value="Admin12345">
                 <span class="toggle-password" onclick="togglePasswordVisibility()">
                     👁️
                 </span>
