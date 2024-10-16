@@ -11,7 +11,6 @@
             background-color: {{ $category->color }};
         }
     </style>
-    <h1 class="text-center mb-4">PRODUCTOS</h1>
 
 
     <form action="{{ route('categoryShop', $category->Name) }}" method="GET" class="mb-3 d-flex align-items-center">

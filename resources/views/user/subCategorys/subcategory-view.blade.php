@@ -11,7 +11,6 @@
             background-color: {{ $subcategory->color }};
         }
     </style>
-    <h1 class="text-center mb-4">PRODUCTOS</h1>
 
     <form action="{{ route('subcategoryShop', $subcategory->Name) }}" method="GET" class="mb-3 d-flex align-items-center">
         <input type="text" class="form-control me-2" id="query" name="query" placeholder="Buscar producto..." />
