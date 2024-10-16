@@ -41,15 +41,25 @@ class EditImage extends Component
     public function updateImage()
     {
         $this->validate([
-            'image' => 'image|max:1024', // Validar la nueva imagen
+            'image' => 'image|mimes:jpg,png|max:1024', // Validar la nueva imagen
         ]);
-        if ($this->oldImage && Storage::disk('public')->exists($this->oldImage)) {
-            Storage::disk('public')->delete($this->oldImage);
+        if ($this->oldImage) {
+            // Asegurarte de que la ruta no esté vacía y exista
+            if (Storage::disk('public')->exists($this->oldImage)) {
+                Storage::disk('public')->delete($this->oldImage);
+            } else {
+                // Aquí puedes agregar un log o un mensaje de error para la depuración
+                
+            }
         }
+        $originalName = pathinfo($this->image->getClientOriginalName(), PATHINFO_FILENAME);
+        $extension = $this->image->getClientOriginalExtension();
 
+        // Generar un nombre único para evitar conflictos
+        $newImageName = $originalName .  '.' . $extension;
 
         // Guardar la nueva imagen y actualizar la propiedad de la imagen existente
-        $this->oldImage = $this->image->store('images', 'public');
+        $this->oldImage = $this->image->storeAs('images', $newImageName, 'public');
 
         $this->IdUser->path = $this->oldImage;
         $this->IdUser->save();
