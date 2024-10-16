@@ -3,7 +3,7 @@
     {{ $name }}
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/shop-subcategori.css') }}">
 @endsection
 @section('content')
     <style>
@@ -29,10 +29,12 @@
                         <img src="{{ asset('storage/default_image.jpg') }}" alt="Image"
                             style="width: 100px; height: auto;">
                     @endif
+                    <div class="container-todo">
                     <h2 class="product-title">{{ $item->Name }}</h2>
                     <p class="product-price">${{ $item->price }}</p>
                     <p class="product-description">{{ $item->description }}</p>
                     @livewire('AñadirCarrito', ['producId' => $item->id], key($item->id))
+                    </div>
                 </div>
             </div>
         @endforeach

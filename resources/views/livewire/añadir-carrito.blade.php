@@ -1,5 +1,5 @@
 <div>
-    <p>Unidades disponibles: {{ $this->producStock }}</p>
+    <p class="stock">Unidades disponibles: {{ $this->producStock }}</p>
     @if (session()->has('message'))
         <div style="color: green;">{{ session('message') }}</div>
     @endif
@@ -56,6 +56,19 @@
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
+        }
+
+        .stock {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
         }
     </style>
 </div>

@@ -3,7 +3,7 @@
     {{ $name }}
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/shop-marca.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/shop-marcas.css') }}">
 @endsection
 @section('content')
     <style>
@@ -20,7 +20,7 @@
         }
     </style>
     <div class="background-image">
-        
+
 
         <form action="{{ route('marcaShop', $marca->Name) }}" method="GET" class="mb-3 d-flex align-items-center">
             <input type="text" class="form-control me-2" id="query" name="query" placeholder="Buscar producto..." />
@@ -39,10 +39,12 @@
                             <img src="{{ asset('storage/default_image.jpg') }}" alt="Image"
                                 style="width: 100px; height: auto;">
                         @endif
-                        <h2 class="product-title">{{ $item->Name }}</h2>
-                        <p class="product-price">${{ $item->price }}</p>
-                        <p class="product-description">{{ $item->description }}</p>
-                        @livewire('AñadirCarrito', ['producId' => $item->id], key($item->id))
+                        <div class="container-todo">
+                            <h2 class="product-title">{{ $item->Name }}</h2>
+                            <p class="product-price">${{ $item->price }}</p>
+                            <p class="product-description">{{ $item->description }}</p>
+                            @livewire('AñadirCarrito', ['producId' => $item->id], key($item->id))
+                        </div>
                     </div>
                 </div>
             @endforeach

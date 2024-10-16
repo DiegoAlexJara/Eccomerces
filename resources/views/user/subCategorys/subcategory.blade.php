@@ -3,10 +3,10 @@
     SUB-CATEGORIAS
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/marcas-shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/subcategory-shop.css') }}">
 @endsection
 @section('content')
-    <div class="container-marca">
+    <div class="container-subcategory">
         @foreach ($subcategory as $item)
             <a href="{{ route('subcategoryShop', $item->Name) }}">
                     <div class="box hover-container" style="background-color: {{ $item->color }} ">

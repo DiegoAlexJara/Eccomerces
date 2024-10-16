@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    /* Gradiente suave */
+    margin: 0;
+    /* Eliminar márgenes predeterminados */
+    padding: 20px;
+    /* Espacio interno */
+    color: #333;
+
+    /* Color de texto por defecto */
+
+}
+
+/* Container for products */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    width: 70%;
+    /* background-color: #ffffff; Fondo blanco para el contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    margin: 10px;
+}
+
+/* Individual product card */
+.product-card {
+    /* background-color: white; */
+    border-radius: 10px;
+    margin: 15px;
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s;
+    position: relative;
+    /* Asegurarse de que tenga un contexto de apilamiento */
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
+   
+
+
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px 10px rgb(0, 0, 0);
+}
+
+/* Product image */
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Product details */
+.product-details {
+    padding: 15px;
+    text-align: center;
+    justify-self: center    ;
+
+
+}
+
+.product-title {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #bc2e1e;
+
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+    color: #bc2e1e;
+    padding: 5px;
+}
+
+.product-price {
+    color: #000000;
+    
+    color: #000000;
+    
+}
+
+.product-description {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+/* Add to cart button */
+.add-to-cart {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.add-to-cart:hover {
+    background-color: #2ecc71;
+}
+
+.container-todo{
+    background-color: rgb(183, 183, 183);
+    margin: 10px 0 0 0;
+    padding: 10px 0 20px 0;
+    border-radius: 30px;
+}

@@ -3,7 +3,7 @@
     MARCAS
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/marcas-shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/marcas-shop.css') }}">
 @endsection
 @section('content')
 

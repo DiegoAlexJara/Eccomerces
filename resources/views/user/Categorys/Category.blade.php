@@ -3,16 +3,14 @@
     CATEGORIAS
 @endsection
 @section('Estilos')
-    <link rel="stylesheet" href="{{ asset('css/marcas-shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/category-shop.css') }}">
 @endsection
 @section('content')
-    <div class="container-marca">
+    <div class="container-category">
         @foreach ($category as $item)
             <a href="{{ route('categoryShop', $item->Name) }}">
                     <div class="box hover-container" style="background-color: {{ $item->color }} ">
                         <h3>{{ $item->Name }}</h3>
-
-
                         <span class="hover-text">{{ $item->description }}</span>
 
                     </div>
