@@ -52,21 +52,27 @@ class EditImage extends Component
                 
             }
         }
-        $originalName = pathinfo($this->image->getClientOriginalName(), PATHINFO_FILENAME);
-        $extension = $this->image->getClientOriginalExtension();
-
-        // Generar un nombre único para evitar conflictos
-        $newImageName = $originalName .  '.' . $extension;
-
-        // Guardar la nueva imagen y actualizar la propiedad de la imagen existente
-        $this->oldImage = $this->image->storeAs('images', $newImageName, 'public');
-
-        $this->IdUser->path = $this->oldImage;
-        $this->IdUser->save();
-
-        // Limpiar la propiedad de la nueva imagen
-        $this->image = null;
-
-        $this->showSquare = false;
+        if ($this->image) {
+            $originalName = pathinfo($this->image->getClientOriginalName(), PATHINFO_FILENAME);
+            $extension = $this->image->getClientOriginalExtension();
+        
+            // Generar un nombre único para evitar conflictos
+            $newImageName = $originalName . '.' . $extension;
+        
+            // Guardar la nueva imagen
+            $this->oldImage = $this->image->storeAs('images', $newImageName, 'public');
+        
+            // Actualiza el modelo
+            $this->IdUser->path = 'storage/images/' . $newImageName; // Asegúrate de que la ruta sea correcta
+            $this->IdUser->save();
+        
+            // Limpiar la propiedad de la nueva imagen
+            $this->image = null;
+        
+            $this->showSquare = false; // Suponiendo que esta propiedad controla la visualización de la imagen
+        } else {
+            // Manejo de error: No se ha subido ninguna imagen
+            // Aquí puedes agregar un mensaje de error o un log
+        }
     }
 }
