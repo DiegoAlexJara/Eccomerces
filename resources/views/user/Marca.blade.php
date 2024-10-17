@@ -12,7 +12,7 @@
             <a href="{{ route('marcaShop', $item->Name) }}">
                 <div class="box hover-container" style="background-color: {{ $item->color }} ">
                     <div class="background-image"
-                        style="background-image: url('{{ asset('storage/' . $item->path) }}');background-size: cover; height:350px; background-position: center;">
+                        style="background-image: url('{{ asset($item->path) }}');background-size: cover; height:350px; background-position: center;">
                         <span class="hover-text">
                             <p>{{ $item->Name }}</p>{{ $item->description }}
                         </span>

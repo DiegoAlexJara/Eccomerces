@@ -24,6 +24,7 @@ class EditImage extends Component
     public function toggleSquare()
     {
         $this->showSquare = !$this->showSquare;
+        $this->image = null;
     }
 
     public function mount()
@@ -41,38 +42,63 @@ class EditImage extends Component
     public function updateImage()
     {
         $this->validate([
-            'image' => 'image|mimes:jpg,png|max:1024', // Validar la nueva imagen
+            'image' => 'image|mimes:jpg,png', // Validar la nueva imagen
         ]);
-        if ($this->oldImage) {
-            // Asegurarte de que la ruta no esté vacía y exista
-            if (Storage::disk('public')->exists($this->oldImage)) {
-                Storage::disk('public')->delete($this->oldImage);
-            } else {
-                // Aquí puedes agregar un log o un mensaje de error para la depuración
-                
-            }
-        }
+        // Validar si existe una imagen subida
         if ($this->image) {
-            $originalName = pathinfo($this->image->getClientOriginalName(), PATHINFO_FILENAME);
-            $extension = $this->image->getClientOriginalExtension();
-        
-            // Generar un nombre único para evitar conflictos
-            $newImageName = $originalName . '.' . $extension;
-        
-            // Guardar la nueva imagen
-            $this->oldImage = $this->image->storeAs('images', $newImageName, 'public');
-        
-            // Actualiza el modelo
-            $this->IdUser->path = 'storage/images/' . $newImageName; // Asegúrate de que la ruta sea correcta
-            $this->IdUser->save();
-        
-            // Limpiar la propiedad de la nueva imagen
-            $this->image = null;
-        
-            $this->showSquare = false; // Suponiendo que esta propiedad controla la visualización de la imagen
+            // Generar un nombre único para la nueva imagen
+            $newImageName = time() . '.' . $this->image->getClientOriginalExtension();
+
+            // Almacenar temporalmente en 'storage/app/public/temp'
+            $tempPath = $this->image->storeAs('temp', $newImageName, 'public');
+
+            // Ruta completa del archivo en el sistema de almacenamiento
+            $absoluteTempPath = storage_path('app/public/' . $tempPath);
+
+            // Mover la imagen desde 'storage/app/public/temp' a 'public/images'
+            if (file_exists($absoluteTempPath)) {
+                if (rename($absoluteTempPath, public_path('images/' . $newImageName))) {
+                    // Eliminar la imagen anterior si existe
+                    if ($this->oldImage) {
+                        $this->deleteOldImage();
+                    }
+
+                    // Actualizar la ruta en el modelo
+                    $this->IdUser->path = 'images/' . $newImageName;
+                    $this->IdUser->save();
+                    $this->oldImage = 'images/'.$newImageName;
+
+                    session()->flash('success', 'Imagen subida y actualizada correctamente.');
+                    $this->render();
+                } else {
+                    session()->flash('error', 'No se pudo mover la nueva imagen.');
+                    $this->render();
+                }
+            } else {
+                session()->flash('error', 'No se encontró el archivo temporal.');
+                $this->render();
+            }
         } else {
-            // Manejo de error: No se ha subido ninguna imagen
-            // Aquí puedes agregar un mensaje de error o un log
+            session()->flash('error', 'No se seleccionó ninguna imagen.');
+            $this->render();
+        }
+        $this->image = null;
+        $this->showSquare = false; 
+
+    }
+    public function deleteOldImage()
+    {
+        // Obtener la ruta absoluta de la imagen anterior
+        $oldImagePath = public_path($this->oldImage);
+
+        if (file_exists($oldImagePath)) {
+            try {
+                unlink($oldImagePath); // Eliminar la imagen anterior
+            } catch (\Exception $e) {
+                session()->flash('error', 'Error al eliminar la imagen: ' . $e->getMessage());
+            }
+        } else {
+            session()->flash('error', 'La imagen anterior no existe: ' . $this->oldImage);
         }
     }
 }

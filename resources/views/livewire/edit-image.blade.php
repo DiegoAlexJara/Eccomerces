@@ -18,16 +18,16 @@
     </style>
 
     @if ($oldImage)
-        <img src="{{ asset('storage/' . $oldImage) }}" alt="Image" style="width: 100px; height: auto;">
+        <img src="{{ asset($oldImage) }}" alt="Image" style="width: 100px; height: auto;">
     @else
-        <img src="{{ asset('storage/default-image.jpg') }}" alt="Imagen por defecto" style="width: 100px; height: auto;">
+        <img src="{{ asset('images/default_image.jpg') }}" alt="" style="width: 100px; height: auto;">
     @endif
 
     <p><button class="btn btn-success mt-3" wire:click="toggleSquare">MODIFICAR</button></p>
     @if ($showSquare)
         <div class="overlay-square">
             <p>IMAGEN VIEJA</p>
-            <img src="{{ asset('storage/' . $oldImage) }}" alt="Image"
+            <img src="{{ asset($oldImage) }}" alt="Image"
                 style="width: 100px; height: auto; margin 0 0 20px 0">
 
             <p>NUEVA IMAGEN</p>

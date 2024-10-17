@@ -18,10 +18,10 @@
                 <div class="product-details">
                     <div class="imgs">
                         @if ($item->path)
-                            <img src="{{ asset('storage/' . $item->path) }}" alt="Image"
+                            <img src="{{ asset($item->path) }}" alt="Image"
                                 style="width: 120px; height: auto;">
                         @else
-                            <img src="{{ asset('storage/default_image.jpg') }}" alt="Image"
+                            <img src="{{ asset('images/default_image.jpg') }}" alt="Image"
                                 style="width: 100px; height: auto;">
                         @endif
                     </div>

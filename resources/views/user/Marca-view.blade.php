@@ -12,7 +12,7 @@
         }
 
         .background-image {
-            background-image: url("{{ asset('storage/' . $marca->path) }}");
+            background-image: url("{{ asset($marca->path) }}");
             margin: 20px;
             padding: 20px;
             background-size: cover;
@@ -33,10 +33,10 @@
 
                     <div class="product-details">
                         @if ($item->path)
-                            <img src="{{ asset('storage/' . $item->path) }}" alt="Image"
+                            <img src="{{ asset( $item->path) }}" alt="Image"
                                 style="width: 120px; height: auto;">
                         @else
-                            <img src="{{ asset('storage/default_image.jpg') }}" alt="Image"
+                            <img src="{{ asset('images/default_image.jpg') }}" alt="Image"
                                 style="width: 100px; height: auto;">
                         @endif
                         <div class="container-todo">
